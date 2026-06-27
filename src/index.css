@@ -46,9 +46,10 @@ body {
 
 .glass-card {
   background: linear-gradient(160deg, var(--glass-top), var(--glass-bottom));
+  background-clip: padding-box;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-hairline);
+  border: 1px solid rgba(255,255,255,0.20);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
   color: var(--cloud);

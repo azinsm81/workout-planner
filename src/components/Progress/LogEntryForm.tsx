@@ -11,8 +11,8 @@ function today() {
 
 export function LogEntryForm({ onAdd }: Props) {
   const [date, setDate] = useState(today());
-  const [sets, setSets] = useState("");
-  const [reps, setReps] = useState("");
+  const [sets, setSets] = useState("3");
+  const [reps, setReps] = useState("10");
   const [weight, setWeight] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
@@ -20,7 +20,7 @@ export function LogEntryForm({ onAdd }: Props) {
     const s = parseInt(sets), r = parseInt(reps), w = parseFloat(weight);
     if (!date || isNaN(s) || isNaN(r) || isNaN(w)) return;
     onAdd({ date, sets: s, reps: r, weight: w });
-    setSets(""); setReps(""); setWeight("");
+    setSets("3"); setReps("10"); setWeight("");
   }
 
   const inputCls = "w-full px-3 py-2 rounded-lg text-sm outline-none";
@@ -40,18 +40,18 @@ export function LogEntryForm({ onAdd }: Props) {
         </div>
         <div>
           <label className="block text-xs mb-1" style={{ color: "var(--cloud-muted)" }}>Weight (kg)</label>
-          <input type="number" step="0.5" min="0" value={weight} onChange={e => setWeight(e.target.value)}
+          <input type="number" step="any" min="0" value={weight} onChange={e => setWeight(e.target.value)}
             placeholder="60" className={inputCls} style={inputStyle} />
         </div>
         <div>
           <label className="block text-xs mb-1" style={{ color: "var(--cloud-muted)" }}>Sets</label>
           <input type="number" min="1" value={sets} onChange={e => setSets(e.target.value)}
-            placeholder="3" className={inputCls} style={inputStyle} />
+            className={inputCls} style={inputStyle} />
         </div>
         <div>
           <label className="block text-xs mb-1" style={{ color: "var(--cloud-muted)" }}>Reps</label>
           <input type="number" min="1" value={reps} onChange={e => setReps(e.target.value)}
-            placeholder="8" className={inputCls} style={inputStyle} />
+            className={inputCls} style={inputStyle} />
         </div>
       </div>
       <button

@@ -42,7 +42,7 @@ export function ExerciseLibrary({ exercises, onAddCustom }: Props) {
       {/* Header */}
       <div
         className="px-4 pt-4 pb-3 shrink-0 space-y-3"
-        style={{ background: "rgba(134,119,143,0.25)", borderBottom: "1px solid var(--border-hairline)" }}
+        style={{ background: "linear-gradient(160deg, var(--glass-top), var(--glass-bottom))", borderBottom: "1px solid rgba(255,255,255,0.20)" }}
       >
         <div className="flex items-center justify-between gap-2">
           {searching ? (

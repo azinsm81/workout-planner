@@ -160,7 +160,7 @@ export default function App() {
         style={{ height: 56, borderBottom: "1px solid rgba(255,255,255,0.06)" }}
       >
         <h1 className="font-display text-2xl font-semibold tracking-tight" style={{ color: "var(--cloud)" }}>
-          Session Planner
+          Workout Planner
         </h1>
         <div className="flex items-center gap-3">
           {/* Mobile: opens drawer */}
@@ -223,7 +223,7 @@ export default function App() {
               background: "linear-gradient(160deg, var(--glass-top), var(--glass-bottom))",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
-              borderLeft: libraryOpen ? "1px solid var(--border-hairline)" : "none",
+              borderLeft: libraryOpen ? "1px solid rgba(255,255,255,0.20)" : "none",
             }}
           >
             {libraryOpen && (
