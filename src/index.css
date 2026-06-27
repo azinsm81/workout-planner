@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-gradient-start: #D9CDAE;
+  --bg-gradient-warm:  #98593F;
+  --bg-gradient-cool:  #6B5C82;
+  --bg-gradient-end:   #1E1B29;
+
+  --surface-cream:     #ECE7D8;
+  --ink:               #271B0E;
+  --stone:             #847C6C;
+  --cloud:             #F6F2EA;
+  --cloud-muted:       rgba(246,242,234,0.64);
+
+  --terracotta:        #8C4E39;
+  --plum:              #6B5C82;
+
+  --glass-top:         rgba(134,119,143,0.55);
+  --glass-bottom:      rgba(45,41,64,0.72);
+  --border-hairline:   rgba(255,255,255,0.08);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Manrope', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass-card {
+  background: linear-gradient(160deg, var(--glass-top), var(--glass-bottom));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-hairline);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  color: var(--cloud);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
