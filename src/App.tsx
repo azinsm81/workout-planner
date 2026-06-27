@@ -185,7 +185,7 @@ export default function App() {
           </button>
           <button
             className="text-sm px-4 py-1.5 rounded-full border font-medium transition-opacity hover:opacity-70"
-            style={{ borderColor: "rgba(255,255,255,0.15)", color: "var(--cloud-muted)" }}
+            style={{ borderColor: "rgba(255,255,255,0.35)", color: "var(--cloud)" }}
             onClick={() => { if (confirm("Reset all sessions? Your exercise history will be preserved.")) resetWeek(); }}
           >
             Reset week

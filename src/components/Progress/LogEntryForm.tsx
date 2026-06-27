@@ -41,7 +41,7 @@ export function LogEntryForm({ onAdd }: Props) {
         <div>
           <label className="block text-xs mb-1" style={{ color: "var(--cloud-muted)" }}>Weight (kg)</label>
           <input type="number" step="any" min="0" value={weight} onChange={e => setWeight(e.target.value)}
-            placeholder="60" className={inputCls} style={inputStyle} />
+            placeholder="" className={inputCls} style={inputStyle} />
         </div>
         <div>
           <label className="block text-xs mb-1" style={{ color: "var(--cloud-muted)" }}>Sets</label>
