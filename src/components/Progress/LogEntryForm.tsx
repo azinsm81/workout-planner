@@ -31,7 +31,7 @@ export function LogEntryForm({ onAdd }: Props) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
+    <form onSubmit={handleSubmit} className="space-y-8">
       <div className="grid grid-cols-2 gap-2">
         <div>
           <label className="block text-xs mb-1" style={{ color: "var(--cloud-muted)" }}>Date</label>
