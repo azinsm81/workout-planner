@@ -5,13 +5,7 @@ interface Props {
 }
 
 export function ProgressChart({ entries }: Props) {
-  if (entries.length < 2) {
-    return (
-      <p className="text-center text-sm py-6" style={{ color: "var(--cloud-muted)" }}>
-        Log a couple of sessions to see your progression here.
-      </p>
-    );
-  }
+  if (entries.length < 2) return null;
 
   const sorted = [...entries].sort((a, b) => a.date.localeCompare(b.date));
   const weights = sorted.map(e => e.weight);
