@@ -1,4 +1,9 @@
 import { useState, useEffect, useRef } from "react";
+
+function formatDate(iso: string) {
+  const [y, m, d] = iso.split("-");
+  return `${d}/${m}/${y}`;
+}
 import type { Exercise, ExerciseLogEntry } from "../../types";
 import { MUSCLE_GROUP_LABELS } from "../../data/exerciseLibrary.seed";
 import { ProgressChart } from "./ProgressChart";
@@ -13,7 +18,7 @@ interface PendingUndo {
 interface Props {
   exercise: Exercise;
   entries: ExerciseLogEntry[];
-  onAdd: (entry: ExerciseLogEntry) => void;
+  onAdd: (entries: ExerciseLogEntry[]) => void;
   onUpdate: (entryIndex: number, entry: ExerciseLogEntry) => void;
   onDelete: (entryIndex: number) => void;
   onRestore: (entryIndex: number, entry: ExerciseLogEntry) => void;
@@ -141,7 +146,7 @@ export function ProgressModal({ exercise, entries, onAdd, onUpdate, onDelete, on
                       className="flex items-center justify-between px-3 py-2 rounded-xl text-sm group/row"
                       style={{ background: "rgba(246,242,234,0.06)" }}
                     >
-                      <span style={{ color: "var(--cloud-muted)" }}>{row.date}</span>
+                      <span style={{ color: "var(--cloud-muted)" }}>{formatDate(row.date)}</span>
                       <span style={{ color: "var(--cloud)" }}>
                         {row.sets}×{row.reps} @ {row.weight}kg
                       </span>

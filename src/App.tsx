@@ -273,7 +273,7 @@ export default function App() {
         <ProgressModal
           exercise={progressExercise}
           entries={logs[progressExerciseId!] ?? []}
-          onAdd={entry => addEntry(progressExerciseId!, entry)}
+          onAdd={entries => entries.forEach(e => addEntry(progressExerciseId!, e))}
           onUpdate={(idx, entry) => updateEntry(progressExerciseId!, idx, entry)}
           onDelete={idx => deleteEntry(progressExerciseId!, idx)}
           onRestore={(idx, entry) => restoreEntry(progressExerciseId!, idx, entry)}
